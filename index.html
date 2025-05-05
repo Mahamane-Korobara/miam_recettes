@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miam || cuisinez en toute simplicité</title>
+    <meta name="title" content="Miam || cuisinez en toute simplicité">
+    <meta name="description" content="Une application de recette de cuisine faite par Dev Mahamane">
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <script src="./assets/js/theme.js"></script>
+
+    <!-- Google font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <!-- Material icon -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+
+    <!-- CSS Personnalisée -->
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+   <!-- Header -->
+
+
+   <header class="header" data-header>
+    <a href="/" class="logo">
+        <img src="./assets/images/pngtree-cooking-logo-png-image_8997434.png" width="156" height="22" alt="Recette" class="logo-light">
+        <img src="./assets/images/pngtree-cooking-logo-png-image_8997434.png" width="156" height="32" alt="Recette" class="logo-dark">
+    </a>
+
+    <nav class="navbar">
+        <ul class="navbar-liste">
+            <li>
+                <a href="/" class="navbar-lien petit-titre etat active">Acceuil</a>
+            </li>
+            <li>
+                <a href="./recipes.html" class="navbar-lien petit-titre etat">Recettes</a>
+            </li>
+        </ul>
+    </nav>
+
+    <button class="icon-btn changement-theme etat deplace" aria-pressed="false" aria-label="Basculer en thème claire et sombre" data-theme-btn>
+        <span class="material-symbols-outlined light-icon" aria-hidden="true">light_mode</span>
+        <span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
+    </button>
+
+    <a href="./enregistrer.html" class="btn btn-principal avec-icon">
+        <span class="material-symbols-outlined" aria-hidden="true">book</span>
+        <span>Recettes enregistrées</span>
+    </a>
+   </header>
+
+   <!-- Navigation mobile -->
+
+   <nav class="mobile-nav" aria-label="primaire">
+    <ul class="nav-list">
+
+        <li class="nav-item">
+            <a href="./recipes.html" class="nav-link">
+                <span class="item-icon">
+
+                    <span class="material-symbols-outlined" aria-hidden="true">lunch_dining</span>
+                </span>
+
+                <span class="label-medium">Recette</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link" aria-current="true">
+                <span class="item-icon">
+                    
+                    <span class="material-symbols-outlined" aria-hidden="true">home</span>
+                </span>
+
+                <span class="label-medium">Accueil</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="./enregistrer.html" class="nav-link">
+                <span class="item-icon">
+                    
+                    <span class="material-symbols-outlined" aria-hidden="true">saved</span>
+                </span>
+
+                <span class="label-medium">Enregistrer</span>
+            </a>
+        </li>
+    </ul>
+   </nav>
+
+
+   <!-- HERO -->
+   <main>
+    <article>
+
+        <section class="hero" aria-label="banner">
+            
+          <div class="banner-card">
+            <h1 class="affichage-large">Votre plat desirée ? </h1>
+
+            <div class="recherche-wrapper" data-recherche-form>
+
+                <span class="material-symbols-outlined leading-icon" aria-hidden="true">local_dining</span>
+
+                <input type="search" name="recherche" aria-label="Rechercher des recettes" placeholder="Rechercher des recettes..." class="champ-recherche body-medium" data-recherche-champ>
+
+                <button class="recherche-submit" aria-label="Soumettre la recherche" data-recherche-btn>
+                    <span class="material-symbols-outlined" aria-hidden="true">search</span>
+                </button>
+            </div>
+
+            <p class="label-medium">
+                Recherchez n'importe quelle recette, par exemple: burger, pizza, sandwich, toast etc...
+            </p>
+          </div>
+
+
+        </section>
+
+
+        <!-- TAB -->
+
+        <section class="section tab">
+            <div class="conteneur">
+
+                <div class="tab-list" data-tab-list role="tablist" aria-label="type repas">
+
+                    <button class="tab-btn petit-titre" role="tab" id="tab-1" tabindex="0" aria-controls="panel-1" aria-selected="true" data-tab-btn>Pétit-dej</button>
+                    <button class="tab-btn petit-titre" role="tab" id="tab-2" tabindex="-1" aria-controls="panel-2" aria-selected="false" data-tab-btn>Déjeuner</button>
+                    <button class="tab-btn petit-titre" role="tab" id="tab-1" tabindex="-1" aria-controls="panel-3" aria-selected="false" data-tab-btn>Dîner</button>
+                    <button class="tab-btn petit-titre" role="tab" id="tab-1" tabindex="-1" aria-controls="panel-4" aria-selected="false" data-tab-btn>En-cas</button>
+                    <button class="tab-btn petit-titre" role="tab" id="tab-1" tabindex="-1" aria-controls="panel-5" aria-selected="false" data-tab-btn>Thé-time</button>
+                </div>
+
+                <div class="tab-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" tabindex="0" data-tab-panel>
+
+                    <!-- <div class="grid-list">
+
+                        <div class="carte carte-squelette">
+
+                            <div class="squelette carte-banner"></div>
+
+                            <div class="carte-body">
+
+                                <div class="squelette carte-titre"></div>
+
+                                <div class="squelette carte-texte"></div>
+                            </div>
+                        </div>
+
+                        <div class="carte">
+
+                            <figure class="carte-media img-holder">
+
+                                <img src="./assets/images/recipe.jpg" width="200" height="200" loading="lazy" alt="Nom de recette" class="img-cover">
+                            </figure>
+
+                            <div class="carte-body">
+
+                                <h3 class="petit-titre">
+                                    <a href="./detail.html" class="carte-lien">Nom recette</a>
+                                </h3>
+
+                                <div class="meta-wrapper">
+
+                                    <div class="meta-item">
+                                        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+
+                                        <span class="label-medium">2 minutes</span>
+                                    </div>
+
+                                    <button class="icon-btn etat supprimer" aria-label="Ajouter aux recettes enregistrées">
+                                        <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
+                                        <span class="material-symbols-outlined bookmark">bookmark</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- <a href="./recipes.html" class="btn btn-secondaire label-large etat">Montrer plus</a> -->
+                </div>
+                <div class="tab-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" tabindex="0" data-tab-panel hidden></div>
+                <div class="tab-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" tabindex="0" data-tab-panel hidden>Dîner</div>
+                <div class="tab-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" tabindex="0" data-tab-panel hidden>Collation</div>
+                <div class="tab-panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" tabindex="0" data-tab-panel hidden>Thé-time</div>
+
+            </div>
+        </section>
+
+
+        <!-- Cuseur recettes -->
+
+        <section class="section curseur-section" aria-labelledby="curseur-label-1" data-curseur-section>
+
+            <!-- <div class="conteneur">
+
+                <h2 class="section-titre headline-small" id="curseur-label-1">
+                    Dernières recettes Asiatiques
+                </h2>
+
+                <div class="curseur">
+
+                    <ul class="curseur-wrapper" data-curseur-wrapper>
+
+                        <li class="curseur-item">
+
+                            <div class="carte">
+
+                                <figure class="carte-media img-holder">
+    
+                                    <img src="./assets/images/recipe.jpg" width="200" height="200" loading="lazy" alt="Nom de recette" class="img-cover">
+                                </figure>
+    
+                                <div class="carte-body">
+    
+                                    <h3 class="petit-titre">
+                                        <a href="./detail.html" class="carte-lien">Nom recette</a>
+                                    </h3>
+    
+                                    <div class="meta-wrapper">
+    
+                                        <div class="meta-item">
+                                            <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+    
+                                            <span class="label-medium">2 minutes</span>
+                                        </div>
+    
+                                        <button class="icon-btn etat supprimer" aria-label="Ajouter aux recettes enregistrées">
+                                            <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
+                                            <span class="material-symbols-outlined bookmark">bookmark</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </li>
+
+                        <li class="curseur-item" data-curseur-item>
+                            <div class="carte">
+                                <a href="./recipes.html" class="charger-plus-de-cartes etat">
+                                    <span class="label-large">Montrer plus</span>
+                                    <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+
+        </section>
+
+
+
+         <!-- Cuseur recettes -->
+
+         <section class="section curseur-section" aria-labelledby="curseur-label-1" data-curseur-section>
+
+            <!-- <div class="conteneur">
+
+                <h2 class="section-titre headline-small" id="curseur-label-1">
+                    Dernières recettes Françaises
+                </h2>
+
+                <div class="curseur">
+
+                    <ul class="curseur-wrapper" data-curseur-wrapper>
+
+                        <li class="curseur-item">
+
+                            <div class="carte">
+
+                                <figure class="carte-media img-holder">
+    
+                                    <img src="./assets/images/recipe.jpg" width="200" height="200" loading="lazy" alt="Nom de recette" class="img-cover">
+                                </figure>
+    
+                                <div class="carte-body">
+    
+                                    <h3 class="petit-titre">
+                                        <a href="./detail.html" class="carte-lien">Nom recette</a>
+                                    </h3>
+    
+                                    <div class="meta-wrapper">
+    
+                                        <div class="meta-item">
+                                            <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+    
+                                            <span class="label-medium">2 minutes</span>
+                                        </div>
+    
+                                        <button class="icon-btn etat supprimer" aria-label="Ajouter aux recettes enregistrées">
+                                            <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
+                                            <span class="material-symbols-outlined bookmark">bookmark</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </li>
+
+                        <li class="curseur-item" data-curseur-item>
+                            <div class="carte">
+                                <a href="./recipes.html" class="charger-plus-de-cartes etat">
+                                    <span class="label-large">Montrer plus</span>
+                                    <span class="material-symbols-outlined" aria-hidden="true">navigate_next</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+
+        </section>
+
+
+        
+        <!-- Tags -->
+
+        <section class="section tag" aria-labelledby="tag-label">
+
+            <div class="conteneur">
+                <h2 class="section-titre display-small" id="tag-label">
+                    Choissiez votre préférence
+                </h2>
+
+                <p class="body-medium section-texte">
+                    Choisir votre préférence en matière de santé est une étape importante vers un mode de vie plus sain
+                </p>
+
+                <div class="tag-list">
+
+                    <a href="./recipes.html?health=wheat-free" class="badge-btn body-medium etat">Sans blés</a>
+                    <a href="./recipes.html?health=vegetarian" class="badge-btn body-medium etat">Végétariens</a>
+                    <a href="./recipes.html?health=vegan" class="badge-btn body-medium etat">Vegans</a>
+                    <a href="./recipes.html?health=tree-nut-free" class="badge-btn body-medium etat">Sans noix</a>
+                    <a href="./recipes.html?health=sulfite-free" class="badge-btn body-medium etat">Sans sulfites</a>
+                    <a href="./recipes.html?health=sugar-conscious" class="badge-btn body-medium etat">Soucieux du sucre</a>
+                    <a href="./recipes.html?health=soy-free" class="badge-btn body-medium etat">Sans soja</a>
+                    <a href="./recipes.html?health=shellfish-free" class="badge-btn body-medium etat">Sans crustacés</a>
+                    <a href="./recipes.html?health=sesame-free" class="badge-btn body-medium etat">Sans sésame</a>
+                    <a href="./recipes.html?health=red-meat-free" class="badge-btn body-medium etat">Sans viande rouge</a>
+                    <a href="./recipes.html?health=pork-free" class="badge-btn body-medium etat">Sans porc</a>
+                    <a href="./recipes.html?health=pecatarian" class="badge-btn body-medium etat">pécatarien</a>
+                    <a href="./recipes.html?health=peanut-free" class="badge-btn body-medium etat">Sans arachides</a>
+                    <a href="./recipes.html?health=paleo" class="badge-btn body-medium etat">Paléo</a>
+                    <a href="./recipes.html?health=No-oil-added" class="badge-btn body-medium etat">Sans huile ajoutée</a>
+                    <a href="./recipes.html?health=mustard-free" class="badge-btn body-medium etat">Sans moutarde</a>
+                    <a href="./recipes.html?health=mollusk-free" class="badge-btn body-medium etat">Sans mollusques</a>
+                    <a href="./recipes.html?health=Mediterranean" class="badge-btn body-medium etat">Méditerranéenne</a>                    
+                    <a href="./recipes.html?health=lupine-free" class="badge-btn body-medium etat">Sans lupin</a>
+                    <a href="./recipes.html?health=low-sugar" class="badge-btn body-medium etat">faible en sucre                    
+                    <a href="./recipes.html?health=low-potassium" class="badge-btn body-medium etat">Sans faible teneur en potassium</a>
+                    <a href="./recipes.html?health=kosher" class="badge-btn body-medium etat">Kascher</a>
+                    <a href="./recipes.html?health=pork-kidney-friendly" class="badge-btn body-medium etat">respectueux des reins</a>
+                    <a href="./recipes.html?health=keto-friendly" class="badge-btn body-medium etat">compatible céto</a> 
+                    <a href="./recipes.html?health=immuno-supportive" class="badge-btn body-medium etat">immuno-soutien</a>
+                    <a href="./recipes.html?health=gluten-free" class="badge-btn body-medium etat">Sans gluten</a>
+                    <a href="./recipes.html?health=fodmap-free" class="badge-btn body-medium etat">Sans fodmap</a>
+                    <a href="./recipes.html?health=fish-free" class="badge-btn body-medium etat">Sans poisson</a>
+                    <a href="./recipes.html?health=egg-free" class="badge-btn body-medium etat">Sans œufs</a>
+                    <a href="./recipes.html?health=DASH" class="badge-btn body-medium etat">DASH</a>
+                    <a href="./recipes.html?health=dairy-free" class="badge-btn body-medium etat">Sans produits</a>
+                    <a href="./recipes.html?health=crustacean-free" class="badge-btn body-medium etat">Sans crustacés</a>
+                    <a href="./recipes.html?health=celery-free" class="badge-btn body-medium etat">Sans céleri</a>
+                    <a href="./recipes.html?health=alcohol-free" class="badge-btn body-medium etat">Sans alcool</a>
+                    <a href="./recipes.html?health=alcohol-cocktail" class="badge-btn body-medium etat">Cocktail d'alcool</a>
+                </div>
+            </div>
+        </section>
+    </article>
+   </main>
+
+
+   <!-- Footer -->
+
+
+   <footer class="footer">
+
+    <p class="copyright body-medium">Copyright 2025 Mahamane</p>
+
+    <a href="/" class="logo">
+        <img src="./assets/images/logo-light.svg" width="156" height="32" alt="Recette" class="logo-light">
+        <img src="./assets/images/logo-dark.svg" width="156" height="32" alt="Recette" class="logo-dark">
+    </a>
+
+    <a href="https://www.edamam.com" target="_blank" class="edamam">
+
+        <img src="./assets/images/edamam.svg" width="200" height="40" loading="lazy" alt="Edaman api de recettes gratuit">
+    </a>
+   </footer>
+
+   <!-- <div class="encasbarre-conteneur">
+    <div class="encasBarre">
+        <p class="body-medium">Ajouter au livre de recette</p>
+    </div>
+   </div> -->
+
+   <script type="module" src="./assets/js/global.js"></script>
+   <script type="module" src="./assets/js/accueil.js"></script>
+</body>
+</html>

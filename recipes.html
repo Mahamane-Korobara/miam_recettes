@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tout les recettes</title>
+    <meta name="title" content="Recettes || cuisinez en toute simplicité">
+    <meta name="description" content="Une application de recette de cuisine faite par Dev Mahamane">
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <script src="./assets/js/theme.js"></script>
+
+    <!-- Google font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <!-- Material icon -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+
+    <!-- CSS Personnalisée -->
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+   <!-- Header -->
+
+
+   <header class="header" data-header>
+    <a href="/" class="logo">
+        <img src="./assets/images/pngtree-cooking-logo-png-image_8997434.png" width="156" height="22" alt="Recette" class="logo-light">
+        <img src="./assets/images/pngtree-cooking-logo-png-image_8997434.png" width="156" height="32" alt="Recette" class="logo-dark">
+    </a>
+
+    <nav class="navbar">
+        <ul class="navbar-liste">
+            <li>
+                <a href="/" class="navbar-lien petit-titre etat">Accueil</a>
+            </li>
+            <li>
+                <a href="#" class="navbar-lien petit-titre etat active">Recettes</a>
+            </li>
+        </ul>
+    </nav>
+
+    <button class="icon-btn changement-theme etat deplace" aria-pressed="false" aria-label="Basculer en thème claire et sombre" data-theme-btn>
+        <span class="material-symbols-outlined light-icon" aria-hidden="true">light_mode</span>
+        <span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
+    </button>
+
+    <a href="./enregistrer.html" class="btn btn-principal avec-icon">
+        <span class="material-symbols-outlined" aria-hidden="true">book</span>
+        <span>Recettes enregistrées</span>
+    </a>
+   </header>
+
+   <!-- Navigation mobile -->
+
+   <nav class="mobile-nav" aria-label="primaire">
+    <ul class="nav-list">
+
+        <li class="nav-item">
+            <a href="#" class="nav-link"  aria-current="true">
+                <span class="item-icon">
+
+                    <span class="material-symbols-outlined" aria-hidden="true">lunch_dining</span>
+                </span>
+
+                <span class="label-medium">Recette</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/" class="nav-link">
+                <span class="item-icon">
+                    
+                    <span class="material-symbols-outlined" aria-hidden="true">home</span>
+                </span>
+
+                <span class="label-medium">Accueil</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="./enregister.html" class="nav-link">
+                <span class="item-icon">
+                    
+                    <span class="material-symbols-outlined" aria-hidden="true">saved</span>
+                </span>
+
+                <span class="label-medium">Enregister</span>
+            </a>
+        </li>
+    </ul>
+   </nav>
+
+
+   <!-- HERO -->
+   <main>
+
+    <article class="article recette-page">
+
+        <!-- Filtre barre -->
+         <div class="filtre-barre" data-filtre-barre>
+
+            <div class="titre-wrapper">
+
+                <span class="material-symbols-outlined" aria-hidden="true">filter_list</span>
+
+                <p class="title-medium">Filtres</p>
+
+                <button class="icon-btn ferme-btn etat" aria-label="Fermer la barre de filtre" data-filtre-toggle>
+                    <span class="material-symbols-outlined" aria-hidden="true">close</span>
+                </button>
+             </div>
+
+             <div class="contenu-flitre"> 
+
+                <div class="recherche-wrapper">
+                    <div class="input-outline">
+                        <label for="recherche" class="body-large label">Recherche</label>
+                        <input type="search" name="recherche" id="recherche" placeholder="Rechercher une recette" class="input-champ body-large">
+                    </div>
+                </div>
+
+                <div class="accordion-conteneur" data-accordion>
+
+                    <button class="accordion-btn etat" aria-controls="temps-cuisine" aria-expanded="false" data-accordion-btn>
+                        <span class="material-symbols-outlined" aria-hidden="true">timer</span>
+
+                        <p class="label-large">Temps cuisine</p>
+
+                        <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+                    </button>
+
+                    <div class="accordion-contenu" id="temps-cuisine">
+                        <div class="accordion-overflow" data-filter="time">
+                            <label class="puce-filtre label-large">&lt; 5 minutes
+                                <input type="radio" name="temps-cuisine" value="5" aria-label="5 minutes ou moins" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">5 - 10 minutes
+                                <input type="radio" name="temps-cuisine" value="5-10" aria-label="5 à 10 minutes" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">10 - 20 minutes
+                                <input type="radio" name="temps-cuisine" value="10-20" aria-label="10 à 20 minutes" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">20 - 30 minutes
+                                <input type="radio" name="temps-cuisine" value="20-30" aria-label="20 à 30 minutes" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">30 - 40 minutes
+                                <input type="radio" name="temps-cuisine" value="30-40" aria-label="30 à 40 minutes" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">40 - 50 minutes
+                                <input type="radio" name="temps-cuisine" value="40-50" aria-label="40 à 50 minutes" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">50 - 60 minutes
+                                <input type="radio" name="temps-cuisine" value="50-60" aria-label="50 à 60 minutes" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">&gt; 1 heure
+                                <input type="radio" name="temps-cuisine" value="60+" aria-label="1 heure ou plus" class="checkbox">
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="accordion-conteneur" data-accordion>
+
+                    <button class="accordion-btn etat" aria-controls="ingr" aria-expanded="false" data-accordion-btn>
+                        <span class="material-symbols-outlined" aria-hidden="true">nutrition</span>
+
+                        <p class="label-large">Ingrédients</p>
+
+                        <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+                    </button>
+
+                    <div class="accordion-contenu" id="ingr">
+                        <div class="accordion-overflow" data-filter="ingr">
+                            <label class="puce-filtre label-large">&lt; 5 Ingrédients
+                                <input type="radio" name="ingredients" value="5" aria-label="5 ingrédients ou moins" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">5 - 10 Ingrédients
+                                <input type="radio" name="ingredients" value="5-10" aria-label="5 à 10 ingrédients" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">10 - 20 Ingrédients
+                                <input type="radio" name="ingredients" value="10-20" aria-label="10 à 20 ingrédients" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">20 - 30 Ingrédients
+                                <input type="radio" name="ingredients" value="20-30" aria-label="20 à 30 ingrédients" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">&gt; 30 Ingrédients
+                                <input type="radio" name="ingredients" value="30+" aria-label="30 ingrédients ou plus" class="checkbox">
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="accordion-conteneur" data-accordion>
+                    <button class="accordion-btn etat" aria-controls="calories" aria-expanded="false" data-accordion-btn>
+                        <span class="material-symbols-outlined" aria-hidden="true">local_fire_department</span>
+
+                        <p class="label-large">Calories</p>
+
+                        <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+                    </button>
+
+                    <div class="accordion-contenu" id="calories">
+                        <div class="accordion-overflow" data-filter="calories">
+                            <label class="puce-filtre label-large">&lt; 50 calories
+                                <input type="radio" name="calories" value="50" aria-label="50 calories ou moins" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">50 - 100 calories
+                                <input type="radio" name="calories" value="50-100" aria-label="100 calories ou moins" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">100 - 200 calories
+                                <input type="radio" name="calories" value="100-200" aria-label="100 à 200 calories" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">200 - 300 calories
+                                <input type="radio" name="calories" value="200-300" aria-label="200 à 300 calories" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">300 - 400 calories
+                                <input type="radio" name="calories" value="300-400" aria-label="300 à 400 calories" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">400 - 500 calories
+                                <input type="radio" name="calories" value="400-500" aria-label="400 à 500 calories" class="checkbox">
+                            </label>
+
+                            <label class="puce-filtre label-large">&gt; 500 calories
+                                <input type="radio" name="calories" value="500+" aria-label="600 calories ou plus" class="checkbox">
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="accordion-conteneur" data-accordion>
+
+                    <button class="accordion-btn etat" aria-controls="regimes" aria-expanded="false" data-accordion-btn>
+                        <span class="material-symbols-outlined" aria-hidden="true">spa</span>
+
+                        <p class="label-large">Régimes</p>
+
+                        <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+                    </button>
+
+                    <div class="accordion-contenu" id="regimes">
+                        <div class="accordion-overflow" data-filter="diet">
+                           
+                            <label class="puce-filtre label-large">
+                                Équilibré
+                            <input type="checkbox" name="equilibre" class="checkbox" value="balanced" aria-label="Équilibré"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Riche en fibres
+                            <input type="checkbox" name="riche-fibres" class="checkbox" value="high-fiber" aria-label="Riche en fibres"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Riche en protéines
+                            <input type="checkbox" name="riche-proteines" class="checkbox" value="high-protein" aria-label="Riche en protéines"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Faible en glucides
+                            <input type="checkbox" name="faible-glucides" class="checkbox" value="low-carb" aria-label="Faible en glucides"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Faible en gras
+                            <input type="checkbox" name="faible-gras" class="checkbox" value="low-fat" aria-label="Faible en gras"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Faible en sodium
+                            <input type="checkbox" name="faible-sodium" class="checkbox" value="low-sodium" aria-label="Faible en sodium"> 
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-conteneur" data-accordion>
+
+                    <button class="accordion-btn etat" aria-controls="sante" aria-expanded="false" data-accordion-btn>
+                        <span class="material-symbols-outlined" aria-hidden="true">health_and_safety</span>
+
+                        <p class="label-large">Santé</p>
+
+                        <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+                    </button>
+
+                    <div class="accordion-contenu" id="sante">
+                        <div class="accordion-overflow" data-filter="health">
+
+                            <label class="puce-filtre label-large">
+                                Cocktail d'alcool
+                            <input type="checkbox" name="cocktail d'alcool" class="checkbox" value="alcohol-cocktail" aria-label="cocktail d'alcool"> 
+                            </label>
+                           
+                            <label class="puce-filtre label-large">
+                                Sans alcool
+                            <input type="checkbox" name="sans-alcool" class="checkbox" value="sans-alcool" aria-label="Sans alcool"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans céleri
+                            <input type="checkbox" name="sans-celeri" class="checkbox" value="celery-free" aria-label="Sans céleri"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans crustacés
+                            <input type="checkbox" name="sans-crustaces" class="checkbox" value="crustacean-free" aria-label="Sans crustacés"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans produits laitiers
+                            <input type="checkbox" name="sans-lait" class="checkbox" value="dairy-free" aria-label="Sans produits laitiers"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                DASH
+                            <input type="checkbox" name="dash" class="checkbox" value="DASH" aria-label="DASH"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans œufs
+                            <input type="checkbox" name="sans-oeufs" class="checkbox" value="egg-free" aria-label="Sans œufs"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans poisson
+                            <input type="checkbox" name="sans-poisson" class="checkbox" value="fish-free" aria-label="Sans poisson"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans fodmap
+                            <input type="checkbox" name="sans-fodmap" class="checkbox" value="fodmap-free" aria-label="Sans fodmap">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans gluten
+                            <input type="checkbox" name="sans-gluten" class="checkbox" value="gluten-free" aria-label="Sans gluten"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Keto
+                            <input type="checkbox" name="keto" class="checkbox" value="keto-friendly" aria-label="Keto"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Bon pour les reins
+                            <input type="checkbox" name="bon-reins" class="checkbox" value="kidney-friendly" aria-label="Bon pour les reins"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Kasher
+                            <input type="checkbox" name="kasher" class="checkbox" value="kosher" aria-label="Kasher"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Kasher
+                            <input type="checkbox" name="kasher" class="checkbox" value="kosher" aria-label="Kasher"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                abdominaux faibles en gras
+                            <input type="checkbox" name="faible-gras" class="checkbox" value="low-fat-abs" aria-label="Faible en gras"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans potassium
+                            <input type="checkbox" name="sans-potassium" class="checkbox" value="low-potassium" aria-label="Sans potassium"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans sucre
+                            <input type="checkbox" name="sans-sucre" class="checkbox" value="low-sugar" aria-label="Sans sucre">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans lupin
+                            <input type="checkbox" name="sans-lupin" class="checkbox" value="lupine-free" aria-label="Sans lupin"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Méditerranéen
+                            <input type="checkbox" name="mediterraneen" class="checkbox" value="Mediterranean" aria-label="Méditerranéen"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans mollusques
+                            <input type="checkbox" name="sans-mollusques" class="checkbox" value="mollusk-free" aria-label="Sans mollusques"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans moutarde
+                            <input type="checkbox" name="sans-moutarde" class="checkbox" value="mustard-free" aria-label="Sans moutarde"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans huile ajoutée
+                            <input type="checkbox" name="sans-huile" class="checkbox" value="no-oil-added" aria-label="Sans huile ajoutée"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Paléo
+                            <input type="checkbox" name="paleo" class="checkbox" value="paleo" aria-label="Paléo"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans arachides
+                            <input type="checkbox" name="sans-arachides" class="checkbox" value="peanut-free" aria-label="Sans arachides"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Pescétarien
+                            <input type="checkbox" name="pescetarien" class="checkbox" value="pescetarian" aria-label="Pescétarien"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans porc
+                            <input type="checkbox" name="sans-porc" class="checkbox" value="pork-free" aria-label="Sans porc"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans viande rouge
+                            <input type="checkbox" name="sans-viande-rouge" class="checkbox" value="red-meat-free" aria-label="Sans viande rouge"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans sésame
+                            <input type="checkbox" name="sans-sesame" class="checkbox" value="sesame-free" aria-label="Sans sésame"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans fruits de mer
+                            <input type="checkbox" name="sans-fruits-mer" class="checkbox" value="shellfish-free" aria-label="Sans fruits de mer"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans soja
+                            <input type="checkbox" name="sans-soja" class="checkbox" value="soy-free" aria-label="Sans soja"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans sulfites
+                            <input type="checkbox" name="sans-sulfites" class="checkbox" value="sulfite-free" aria-label="Sans sulfites"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans fruits à coque
+                            <input type="checkbox" name="sans-fruits-coque" class="checkbox" value="Tree Nut Free" aria-label="Sans fruits à coque"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Végétalien
+                            <input type="checkbox" name="vegetalien" class="checkbox" value="vegan" aria-label="Végétalien"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Végétarien
+                            <input type="checkbox" name="vegetarien" class="checkbox" value="vegetarian" aria-label="Végétarien"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sans blé
+                            <input type="checkbox" name="sans-ble" class="checkbox" value="wheat-free" aria-label="Sans blé"> 
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="accordion-conteneur" data-accordion>
+
+                    <button class="accordion-btn etat" aria-controls="repas" aria-expanded="false" data-accordion-btn>
+                        <span class="material-symbols-outlined" aria-hidden="true">restaurant</span>
+
+                        <p class="label-large">Repas</p>
+
+                        <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+                    </button>
+
+                    <div class="accordion-contenu" id="repas">
+                        <div class="accordion-overflow" data-filter="mealType">
+                           
+                            <label class="puce-filtre label-large">
+                                Petit déjeuner
+                            <input type="checkbox" name="petit-dejeuner" class="checkbox" value="breakfast" aria-label="Petit déjeuner"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Dîner
+                            <input type="checkbox" name="diner" class="checkbox" value="dinner" aria-label="Dîner">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Déjeuner
+                            <input type="checkbox" name="dejeuner" class="checkbox" value="lunch" aria-label="Déjeuner"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                En-cas
+                            <input type="checkbox" name="collation" class="checkbox" value="snack" aria-label="Collation"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Goûter
+                            <input type="checkbox" name="gouter" class="checkbox" value="teatime" aria-label="Goûter"> 
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="accordion-conteneur" data-accordion>
+
+                    <button class="accordion-btn etat" aria-controls="plat" aria-expanded="false" data-accordion-btn>
+                        <span class="material-symbols-outlined" aria-hidden="true">fastfood</span>
+
+                        <p class="label-large">Plat</p>
+
+                        <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+                    </button>
+
+                    <div class="accordion-contenu" id="plat">
+                        <div class="accordion-overflow" data-filter="dishType">
+                           
+                            <label class="puce-filtre label-large">
+                                Biscuits et cookies
+                            <input type="checkbox" name="biscuits-cookies" class="checkbox" value="biscuits-cookies" aria-label="Biscuits et cookies"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Pain
+                            <input type="checkbox" name="pain" class="checkbox" value="bread" aria-label="Pain">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Céréales
+                            <input type="checkbox" name="cereales" class="checkbox" value="cereals" aria-label="Céréales">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Desserts
+                            <input type="checkbox" name="desserts" class="checkbox" value="desserts" aria-label="Desserts">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Boissons
+                            <input type="checkbox" name="boissons" class="checkbox" value="drinks" aria-label="Boissons"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Plat principal
+                            <input type="checkbox" name="plat-principal" class="checkbox" value="main course" aria-label="Plat principal">
+                            </label>
+                            
+                            <label class="puce-filtre label-large">
+                                Crêpes
+                            <input type="checkbox" name="crepes" class="checkbox" value="preps" aria-label="Crêpes">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Conserves
+                            <input type="checkbox" name="conserves" class="checkbox" value="preserve" aria-label="Conserves">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Salade
+                            <input type="checkbox" name="salade" class="checkbox" value="salad" aria-label="Salade">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sandwichs
+                            <input type="checkbox" name="sandwichs" class="checkbox" value="sandwiches" aria-label="Sandwichs">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Accompagnement
+                            <input type="checkbox" name="accompagnement" class="checkbox" value="side dish" aria-label="Accompagnement">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Soupe
+                            <input type="checkbox" name="soupe" class="checkbox" value="soup" aria-label="Soupe">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Entrée
+                            <input type="checkbox" name="entree" class="checkbox" value="starter" aria-label="Entrée">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sucreries
+                            <input type="checkbox" name="sucreries" class="checkbox" value="sweets" aria-label="Sucreries">
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="accordion-conteneur" data-accordion>
+
+                    <button class="accordion-btn etat" aria-controls="cuisine" aria-expanded="false" data-accordion-btn>
+                        <span class="material-symbols-outlined" aria-hidden="true">public</span>
+
+                        <p class="label-large">Cuisine</p>
+
+                        <span class="material-symbols-outlined trailing-icon" aria-hidden="true">expand_more</span>
+                    </button>
+
+                    <div class="accordion-contenu" id="cuisine">
+                        <div class="accordion-overflow" data-filter="cuisineType">
+                           
+                            <label class="puce-filtre label-large">
+                                Américaine
+                            <input type="checkbox" name="americaine" class="checkbox" value="american" aria-label="Américaine"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Asiatique
+                            <input type="checkbox" name="asiatique" class="checkbox" value="asian" aria-label="Asiatique">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Britannique
+                            <input type="checkbox" name="britannique" class="checkbox" value="british" aria-label="Britannique"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Caribéenne
+                            <input type="checkbox" name="caribeenne" class="checkbox" value="caribbean" aria-label="Caribéenne"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Europe centrale
+                            <input type="checkbox" name="europe-centrale" class="checkbox" value="central europe" aria-label="Europe centrale">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Chinoise
+                            <input type="checkbox" name="chinoise" class="checkbox" value="chinese" aria-label="Chinoise">
+                            </label>
+                            
+                            <label class="puce-filtre label-large">
+                                Europe de l'Est
+                            <input type="checkbox" name="europe-est" class="checkbox" value="eastern europe" aria-label="Europe de l'Est"> 
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Française
+                            <input type="checkbox" name="francaise" class="checkbox" value="french" aria-label="Française">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Indienne
+                            <input type="checkbox" name="indienne" class="checkbox" value="indian" aria-label="Indienne">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Italienne
+                            <input type="checkbox" name="italienne" class="checkbox" value="italian" aria-label="Italienne">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Japonaise
+                            <input type="checkbox" name="japonaise" class="checkbox" value="japanese" aria-label="Japonaise">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Kasher                              
+                            <input type="checkbox" name="kasher" class="checkbox" value="kosher" aria-label="Kasher">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Méditerranéenne
+                            <input type="checkbox" name="mediterraneenne" class="checkbox" value="mediterranean" aria-label="Méditerranéenne">
+                            </label> 
+
+                            <label class="puce-filtre label-large">
+                                Mexicaine
+                            <input type="checkbox" name="mexicaine" class="checkbox" value="mexican" aria-label="Mexicaine">
+                            </label>
+
+                            <label class="puce-filtre label-large">                               
+                                Moyen-orientale
+                            <input type="checkbox" name="moyen-orientale" class="checkbox" value="middle eastern" aria-label="Moyen-orientale">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Nordique
+                            <input type="checkbox" name="nordique" class="checkbox" value="nordic" aria-label="Nordique">
+                            </label>
+
+                            <label class="puce-filtre label-large">
+                                Sud-américaine
+                            <input type="checkbox" name="sud-americaine" class="checkbox" value="south american" aria-label="Sud-américaine">
+                            </label>
+
+                            <label class="puce-filtre label-large">                               
+                                Asie du Sud-Est
+                            <input type="checkbox" name="asie-sud-est" class="checkbox" value="south east asian" aria-label="Asie du Sud-Est">
+                            </label>
+                        </div>
+                    </div>
+                    
+                </div>
+             </div>
+
+             <div class="flitre-actions">
+
+                <button class="btn btn-secondaire label-large etat" data-filtre-effacer>Effacer</button>
+
+                <button class="btn btn-principal label-large" data-filtre-toggle data-filtre-submit>Appliquer</button>
+             </div>
+         </div>
+
+         <div class="overlay" data-overlay data-filtre-toggler></div>
+
+         <div class="recette-conteneur conteneur">
+
+            <div class="titre-wrapper">
+ 
+                <h2 class="headline-small">Tout les recettes</h2>
+
+                <button class="btn btn-secondaire btn-filtre a-icon etat" aria-label="Ouvrire la barre de filtre" data-filtre-toggle data-filtre-btn>
+
+                    <span class="material-symbols-outlined" aria-hidden="true">filter_list</span>
+
+                    <div class="wrapper">
+                        <span class="label-large">Filtres</span>
+
+                        <div class="badge label-small" data-filtre-compte>9</div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="grid-list" data-grid-list></div>
+
+            <div class="montrer-plus grid-list" data-monter-plus>
+                <!-- <p class="body-medium info-texte">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </p> -->
+            </div>
+
+         </div>
+    </article>
+   </main>
+
+
+   <!-- Footer -->
+
+
+   <footer class="footer">
+
+    <p class="copyright body-medium">Copyright 2025 Mahamane</p>
+
+    <a href="/" class="logo">
+        <img src="./assets/images/logo-light.svg" width="156" height="32" alt="Recette" class="logo-light">
+        <img src="./assets/images/logo-dark.svg" width="156" height="32" alt="Recette" class="logo-dark">
+    </a>
+
+    <a href="https://www.edamam.com" target="_blank" class="edamam">
+
+        <img src="./assets/images/edamam.svg" width="200" height="40" loading="lazy" alt="Edaman api de recettes gratuit">
+    </a>
+   </footer>
+
+   <!-- <div class="encasbarre-conteneur">
+    <div class="encasBarre">
+        <p class="body-medium">Ajouter au livre de recette</p>
+    </div>
+   </div> -->
+
+   <script type="module" src="./assets/js/global.js"></script>
+   <script type="module" src="./assets/js/recettes.js"></script>
+</body>
+</html>

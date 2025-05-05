@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miam recettes</title>
+    <meta name="title" content="Recettes || cuisinez en toute simplicité">
+    <meta name="description" content="Une application de recette de cuisine faite par Dev Mahamane">
+
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+    <script src="./assets/js/theme.js"></script>
+
+    <!-- Google font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <!-- Material icon -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0" />
+
+    <!-- CSS Personnalisée -->
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+<body>
+   <!-- Header -->
+
+
+   <header class="header" data-header>
+    <a href="/" class="logo">
+        <img src="./assets/images/pngtree-cooking-logo-png-image_8997434.png" width="156" height="22" alt="Recette" class="logo-light">
+        <img src="./assets/images/pngtree-cooking-logo-png-image_8997434.png" width="156" height="32" alt="Recette" class="logo-dark">
+    </a>
+
+    <nav class="navbar">
+        <ul class="navbar-liste">
+            <li>
+                <a href="/" class="navbar-lien petit-titre etat">Accueil</a>
+            </li>
+            <li>
+                <a href="./recipes.html" class="navbar-lien petit-titre etat">Recettes</a>
+            </li>
+        </ul>
+    </nav>
+
+    <button class="icon-btn changement-theme etat deplace" aria-pressed="false" aria-label="Basculer en thème claire et sombre" data-theme-btn>
+        <span class="material-symbols-outlined light-icon" aria-hidden="true">light_mode</span>
+        <span class="material-symbols-outlined dark-icon" aria-hidden="true">dark_mode</span>
+    </button>
+
+    <a href="./enregistrer.html" class="btn btn-principal avec-icon">
+        <span class="material-symbols-outlined" aria-hidden="true">book</span>
+        <span>Recettes enregistrées</span>
+    </a>
+   </header>
+
+   <!-- Navigation mobile -->
+
+   <nav class="mobile-nav" aria-label="primaire">
+    <ul class="nav-list">
+
+        <li class="nav-item">
+            <a href="./recipes.html" class="nav-link">
+                <span class="item-icon">
+
+                    <span class="material-symbols-outlined" aria-hidden="true">lunch_dining</span>
+                </span>
+
+                <span class="label-medium">Recette</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="/" class="nav-link">
+                <span class="item-icon">
+                    
+                    <span class="material-symbols-outlined" aria-hidden="true">home</span>
+                </span>
+
+                <span class="label-medium">Accueil</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="./enregistrer.html" class="nav-link">
+                <span class="item-icon">
+                    
+                    <span class="material-symbols-outlined" aria-hidden="true">saved</span>
+                </span>
+
+                <span class="label-medium">Enregistrer</span>
+            </a>
+        </li>
+    </ul>
+   </nav>
+
+
+   <!-- HERO -->
+   <main class="detail-page-main">
+
+    <article class="article conteneur detail-page" data-detail-conteneur>
+
+        <!-- <figure class="detail-banner img-holder">
+            <img src="./assets/images/detail-banner.jpg" width="300" height="300" alt="Détails de la recette" class="img-cover">
+        </figure>
+
+        <div class="detail-contenu">
+
+            <div class="titre-wrapper">
+                <h1 class="display-small">Lorem ipsum dolor sit amet consectetur</h1>
+
+                <button class="btn btn-secondaire etat a-icon supprimer">
+                    <span class="material-symbols-outlined bookmark-add" aria-hidden="true">bookmark_add</span>
+                    <span class="material-symbols-outlined bookmark" aria-hidden="true">bookmark</span>
+                    <span class="label-large save-text">Enregistré</span>
+                    <span class="label-large unsaved-text">Retiré</span>
+                </button>
+            </div>
+
+            <div class="detail-auteur label-large">
+                <span class="span">par</span> Lorem ipsum 
+            </div>
+
+            <div class="detail-stats">
+                <div class="stats-item">
+                    <span class="display-medium">4</span>
+                    <span class="label-medium">Ingredients</span>
+                </div>
+
+                <div class="stats-item">
+                    <span class="display-medium">15</span>
+                    <span class="label-medium">Minutes</span>
+                </div>
+
+                <div class="stats-item">
+                    <span class="display-medium">384</span>
+                    <span class="label-medium">calories</span>
+                </div>
+            </div>
+
+            <div class="tag-list">
+                <a href="./recipes.html" class="puce-filtre label-large etat">Poissons & Fruits de mer</a>
+                <a href="./recipes.html" class="puce-filtre label-large etat">Américaine</a>
+                <a href="./recipes.html" class="puce-filtre label-large etat">Dîner</a>
+                <a href="./recipes.html" class="puce-filtre label-large etat">Saumon</a>
+            </div>
+
+            <h2 class="title-medium ingr-title">
+                Ingrédients
+                <span>Pour 6 personnes</span>
+            </h2>
+
+            <ul class="body-large ingr-list">
+                 <li class="ingr-item">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                </li>
+                <li class="ingr-item">
+                     voluptatem porro praesentium quaerat quasi molestiae 
+                     temporibus dolores reprehenderit debitis nobis eligendi 
+                     esse quod aperiam aliquid suscipit! Optio cum eius perspiciatis.
+                </li>
+            </ul>
+        </div> -->
+
+        <div class="detail-banner detail-banner-squelette squelette"></div>
+        <div class="detail-contenu detail-contenu-squelette">
+            <div class="titre-wrapper">
+                <div class="titre-squelette squelette"></div>
+            </div>
+
+            <div class="detail-auteur texte-squelette squelette"></div>
+
+            <div class="detail-stats">
+
+                <div class="stats-item">
+                    <span class="squelette titre-squelette"></span>
+                    <span class="squelette texte-squelette"></span>
+                </div>
+
+
+                <div class="stats-item">
+                    <span class="squelette titre-squelette"></span>
+                    <span class="squelette texte-squelette"></span>
+                </div>
+
+                <div class="stats-item">
+                    <span class="squelette titre-squelette"></span>
+                    <span class="squelette texte-squelette"></span>
+                </div>
+            </div>
+
+            <div class="tag-list"> 
+                <div class="puce-filtre squelette puce-filtre-squelette"></div>
+                <div class="puce-filtre squelette puce-filtre-squelette"></div>
+                <div class="puce-filtre squelette puce-filtre-squelette"></div>
+            </div>
+
+            <div class="ingr-titre squelette titre-squelette"></div>
+
+            <div class="ingr-list">
+                <div class="ingr-item squelette texte-squelette"></div>
+                <div class="ingr-item squelette texte-squelette"></div>
+                <div class="ingr-item squelette texte-squelette"></div>
+                <div class="ingr-item squelette texte-squelette"></div>
+            </div>
+        </div>
+      
+    </article>
+   </main>
+
+
+   <!-- Footer -->
+
+
+   <footer class="footer">
+
+    <p class="copyright body-medium">Copyright 2025 Mahamane</p>
+
+    <a href="/" class="logo">
+        <img src="./assets/images/logo-light.svg" width="156" height="32" alt="Recette" class="logo-light">
+        <img src="./assets/images/logo-dark.svg" width="156" height="32" alt="Recette" class="logo-dark">
+    </a>
+
+    <a href="https://www.edamam.com" target="_blank" class="edamam">
+
+        <img src="./assets/images/edamam.svg" width="200" height="40" loading="lazy" alt="Edaman api de recettes gratuit">
+    </a>
+   </footer>
+
+   <!-- <div class="encasbarre-conteneur">
+    <div class="encasBarre">
+        <p class="body-medium">Ajouter au livre de recette</p>
+    </div>
+   </div> -->
+
+   <script type="module" src="./assets/js/global.js"></script>
+   <script type="module" src="./assets/js/detail.js"></script>
+</body>
+</html>
