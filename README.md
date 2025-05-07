@@ -27,7 +27,7 @@ Une application web moderne de recettes de cuisine qui permet aux utilisateurs d
 
 1. Clonez le repository
 ```bash
-git clone https://github.com/votre-username/miam-recettes.git
+git clone https://github.com/Mahamane-Korobara/miam_recettes.git
 ```
 
 2. Ouvrez le dossier du projet
