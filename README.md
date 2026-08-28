@@ -60,3 +60,11 @@ Mahamane Korobara
 
 - API Edamam pour l'accès aux données de recettes
 - Icons par Material Icons
+---
+
+## 👤 Auteur
+
+Développé par **Mahamane Korobara**, développeur full-stack.
+
+- 🌐 Portfolio & blog technique : **[sahelstack.tech](https://www.sahelstack.tech)**
+- 💼 GitHub : [@Mahamane-Korobara](https://github.com/Mahamane-Korobara)
